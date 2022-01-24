@@ -27,8 +27,8 @@ namespace AareonTechnicalTest
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            PersonConfig.Configure(modelBuilder);
             TicketConfig.Configure(modelBuilder);
+            PersonConfig.Configure(modelBuilder);
         }
     }
 }

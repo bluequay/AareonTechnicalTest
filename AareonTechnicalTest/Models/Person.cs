@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AareonTechnicalTest.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace AareonTechnicalTest.Models
 {
-    public class Person
+    public class Person : IModelBase
     {
         [Key]
-        public int Id { get; }
+        public int Id { get; internal set; }
 
         public string Forename { get; set; }
 

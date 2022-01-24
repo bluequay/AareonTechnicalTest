@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AareonTechnicalTest.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace AareonTechnicalTest.Models
 {
-    public class Ticket
+    public class Ticket : IModelBase
     {
         [Key]
         public int Id { get; }

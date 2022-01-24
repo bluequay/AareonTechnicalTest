@@ -28,7 +28,7 @@ namespace AareonTechnicalTest.Repositories
                 await SaveChangesAsync();
             }
 
-            return ticket;
+            return existingTicket;
         }
     }
 }

@@ -37,6 +37,7 @@ namespace AareonTechnicalTest.Services
                 throw new ResourceNotFoundException($"No ticket found for id - {id}");
             }
 
+            // Should notes also be removed here?
             await _ticketRepository.RemoveAsync(ticket, true);
         }
 
@@ -60,8 +61,8 @@ namespace AareonTechnicalTest.Services
         public async Task<Ticket> UpdateAsync(int ticketId, Ticket ticket)
         {
             await ValidatePersonExists(ticket.PersonId);
-            await _ticketRepository.UpdateAsync(ticketId, ticket, true);
-            return ticket;
+            var updatedTicket = await _ticketRepository.UpdateAsync(ticketId, ticket, true);
+            return updatedTicket;
         }
 
         private async Task ValidatePersonExists(int personId)

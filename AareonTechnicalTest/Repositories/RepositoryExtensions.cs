@@ -9,6 +9,7 @@ namespace AareonTechnicalTest.Repositories
         {
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<ITicketRepository, TicketRepository>();
+            services.AddScoped<INoteRepository, NoteRepository>();
             return services;
         }
     }

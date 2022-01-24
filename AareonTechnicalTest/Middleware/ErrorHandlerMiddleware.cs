@@ -30,8 +30,10 @@ namespace AareonTechnicalTest.Middleware
                 switch (error)
                 {
                     case ResourceNotFoundException:
-                        // custom application error
                         response.StatusCode = (int)HttpStatusCode.NotFound;
+                        break;
+                    case UserNotAuthorisedException:
+                        response.StatusCode = (int)HttpStatusCode.Forbidden;
                         break;
                     default:
                         // unhandled error

@@ -1,5 +1,8 @@
 ﻿using AareonTechnicalTest.Interfaces;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleToAttribute("AareonTechnicalTest.Tests")]
 
 namespace AareonTechnicalTest.Models
 {

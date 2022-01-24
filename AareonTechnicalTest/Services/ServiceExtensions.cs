@@ -9,6 +9,7 @@ namespace AareonTechnicalTest.Services
         {
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<ITicketService, TicketService>();
+            services.AddScoped<INoteService, NoteService>();
             return services;
         }
     }

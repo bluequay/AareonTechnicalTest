@@ -1,3 +1,6 @@
+using AareonTechnicalTest.Middleware;
+using AareonTechnicalTest.Repositories;
+using AareonTechnicalTest.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +26,8 @@ namespace AareonTechnicalTest
 
             services.AddControllers();
             services.AddDbContext<ApplicationContext>(c => c.UseSqlite());
+            services.AddRepositories();
+            services.AddServices();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AareonTechnicalTest", Version = "v1" });
@@ -44,6 +49,8 @@ namespace AareonTechnicalTest
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

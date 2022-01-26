@@ -3,13 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AareonTechnicalTest.Models
 {
-    public class Ticket : IModelBase
+    public class Note : IModelBase
     {
         [Key]
-        public int Id { get; }
+        public int Id { get; internal set; }
 
-        public string Content { get; set; }
+        public int TicketId { get; set; }
 
         public int PersonId { get; set; }
+
+        public string Content { get; set; }
     }
 }
